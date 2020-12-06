@@ -4,7 +4,6 @@ import json
 
 routes = []
 
-routes.append(dict(
-    rule='/get-recipes/',
-    view_func=get_recipes,
-    options=dict(methods=['GET'])))
+routes.append(
+    dict(rule="/get-recipes/", view_func=get_recipes, options=dict(methods=["GET"]))
+)
