@@ -1,6 +1,6 @@
 import json
 
-from ....db import mongo
+from HeirloomApi.db import mongo
 from ..controller.create_recipe import create_recipe
 
 routes = []

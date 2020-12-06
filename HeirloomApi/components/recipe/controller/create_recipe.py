@@ -2,9 +2,9 @@ import json
 
 from flask import Response, abort, current_app, request
 
-from ....db import mongo
-from ....models.exceptions import InvalidRequestBody
-from ....models.recipe.base_recipe import Recipe
+from HeirloomApi.db import mongo
+from HeirloomApi.models.exceptions import InvalidRequestBody
+from HeirloomApi.models.recipe.base_recipe import Recipe
 from ..services import add_recipe
 
 

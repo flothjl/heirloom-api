@@ -1,6 +1,6 @@
 from flask import make_response
 
-from ...db import mongo
+from HeirloomApi.db import mongo
 
 
 def add_recipe(value: dict):

@@ -1,8 +1,9 @@
 import inspect
 from typing import List
 
-from ...models.exceptions import InvalidRequestBody
-from ..ingredients.base_ingredient import Ingredient
+from HeirloomApi.models.exceptions import InvalidRequestBody
+from HeirloomApi.models.ingredients.base_ingredient import Ingredient
+
 
 class Recipe:
     def __init__(
