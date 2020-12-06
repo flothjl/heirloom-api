@@ -1,6 +1,6 @@
 import pytest
-from HeirloomApi.models.ingredients.base_ingredient import Ingredient
-from HeirloomApi.models.recipe.base_recipe import Recipe
+from heirloom_api.models.ingredients.base_ingredient import Ingredient
+from heirloom_api.models.recipe.base_recipe import Recipe
 
 
 def test_ingredient():

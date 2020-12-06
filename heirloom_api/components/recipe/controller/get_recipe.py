@@ -1,6 +1,6 @@
 import json
 
-from HeirloomApi.db import mongo
+from heirloom_api.db import mongo
 
 
 def get_recipes():

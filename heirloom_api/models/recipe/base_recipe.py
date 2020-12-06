@@ -1,8 +1,8 @@
 import inspect
 from typing import List
 
-from HeirloomApi.models.exceptions import InvalidRequestBody
-from HeirloomApi.models.ingredients.base_ingredient import Ingredient
+from heirloom_api.models.exceptions import InvalidRequestBody
+from heirloom_api.models.ingredients.base_ingredient import Ingredient
 
 
 class Recipe:

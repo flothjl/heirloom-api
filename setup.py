@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='HeirloomApi',
+    name='heirloom_api',
     author='J. Floth',
     version='0.1',
     url='',
