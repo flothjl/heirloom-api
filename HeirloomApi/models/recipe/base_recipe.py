@@ -1,8 +1,8 @@
-from typing import List
 import inspect
-from ..ingredients.base_ingredient import Ingredient
-from ...models.exceptions import InvalidRequestBody
+from typing import List
 
+from ...models.exceptions import InvalidRequestBody
+from ..ingredients.base_ingredient import Ingredient
 
 class Recipe:
     def __init__(

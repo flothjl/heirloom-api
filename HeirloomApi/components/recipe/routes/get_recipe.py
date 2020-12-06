@@ -1,6 +1,7 @@
+import json
+
 from ....db import mongo
 from ..controller.get_recipe import get_recipes
-import json
 
 routes = []
 

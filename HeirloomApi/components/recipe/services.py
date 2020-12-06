@@ -1,5 +1,6 @@
-from ...db import mongo
 from flask import make_response
+
+from ...db import mongo
 
 
 def add_recipe(value: dict):
