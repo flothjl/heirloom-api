@@ -6,6 +6,9 @@ from heirloom_api.models.ingredients.base_ingredient import Ingredient
 
 
 class Recipe:
+    '''
+    Base class for recipe model
+    '''
     def __init__(
         self,
         ingredients: List[Ingredient],
@@ -13,7 +16,7 @@ class Recipe:
         description: str = None,
         instructions: str = None,
     ):
-        self.ingredients = self._build_ingredient_list(ingredients)
+        self.ingredients = self.build_ingredient_list(ingredients)
         self.title = title
         self.description = description
         self.instructions = instructions
@@ -27,7 +30,8 @@ class Recipe:
         Returns:
             Recipe object.
 
-        InvalidRequestBody exception raised in event that an invalid attribute is passed in the body of the request
+        InvalidRequestBody exception raised in event an
+        invalid attribute is passed in the body of the request
         """
 
         attributes = inspect.getfullargspec(Recipe)[0]
@@ -48,7 +52,11 @@ class Recipe:
         )
         return recipe
 
-    def _build_ingredient_list(self, input_list: list):
+    @staticmethod
+    def build_ingredient_list(input_list: list):
+        '''
+        builds ingredient list to store the ingredient list as a dictionary
+        '''
         return [
             Ingredient(
                 ingredient["name"], ingredient.get("amount"), ingredient.get("uom")

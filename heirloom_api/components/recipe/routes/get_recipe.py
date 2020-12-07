@@ -1,5 +1,3 @@
-import json
-
 from ..controller.get_recipe import get_recipes
 
 routes = []

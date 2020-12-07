@@ -10,7 +10,9 @@ from .db import mongo
 
 
 def create_app(test_config=None):
-    # create and configure the app
+    '''
+    create and configure the app
+    '''
     app = Flask(__name__, instance_relative_config=True)
     app.config["MONGO_URI"] = DbEnums.CONNECTION_STRING
     mongo.init_app(app)
@@ -31,10 +33,12 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route("/hello")
     def hello():
+        #pylint: disable=unused-variable
         return "Hello, World!"
 
     @app.route("/testMongo")
     def test_mongo():
+        #pylint: disable=unused-variable
         return json.dumps(mongo.db.list_collection_names())
 
     app.register_blueprint(recipe_bp)

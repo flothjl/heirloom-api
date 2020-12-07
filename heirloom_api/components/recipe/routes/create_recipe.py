@@ -1,6 +1,3 @@
-import json
-
-from heirloom_api.db import mongo
 from ..controller.create_recipe import create_recipe
 
 routes = []
