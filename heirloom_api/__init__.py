@@ -6,7 +6,9 @@ from flask import Flask
 from db_creds import DbEnums
 
 from .components.recipe.routes import bp as recipe_bp
-from .db import mongo
+from .components.auth.routes import bp as auth_bp
+from .db.mongo import mongo
+from .db import auth
 
 
 def create_app(test_config=None):
@@ -14,8 +16,13 @@ def create_app(test_config=None):
     create and configure the app
     '''
     app = Flask(__name__, instance_relative_config=True)
+    app.config.from_mapping(
+        SECRET_KEY='dev',
+        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+    )
     app.config["MONGO_URI"] = DbEnums.CONNECTION_STRING
     mongo.init_app(app)
+    auth.init_app(app)
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -42,5 +49,7 @@ def create_app(test_config=None):
         return json.dumps(mongo.db.list_collection_names())
 
     app.register_blueprint(recipe_bp)
-
+    
+    app.register_blueprint(auth_bp)
+    
     return app

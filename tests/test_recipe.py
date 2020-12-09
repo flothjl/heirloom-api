@@ -8,5 +8,5 @@ def test_ingredient():
 
 
 def test_recipe():
-    new_rec = Recipe(ingredients=[Ingredient('apple')], title='test recipe')
+    new_rec = Recipe(ingredients=[Ingredient(name='apple').__dict__], title='test recipe')
     assert new_rec.ingredients[0].get('name') == 'apple'
