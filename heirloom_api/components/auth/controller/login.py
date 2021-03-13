@@ -23,6 +23,6 @@ def login():
     if error is None:
         session.clear()
         session['user_id'] = user['id']
-        return {'success': True}
+        return {'success': True, 'msg': 'success', 'data':session.get('user_id')}
 
     return {'success': False, 'msg': error}

@@ -12,7 +12,9 @@ def create_recipe():
     Returns: db objectID
     '''
     try:
+        print(f'{request.get_json()}')
         recipe = Recipe.build_from_json(request.get_json())
+        
         recipe = {'created_by': g.user['id'],
                   'created': int(time()),
                   **recipe.__dict__}
@@ -32,7 +34,7 @@ def update_recipe(recipe_id):
         recipe = {'created_by': g.user['id'],
                   'created': int(time()),
                   **recipe.__dict__}
-        response = db_update_recipe(recipe, recipe_id)
+        db_update_recipe(recipe, recipe_id)
         return 'success'
     except InvalidRequestBody as error:
         current_app.logger.error(f"{error}")

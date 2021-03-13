@@ -4,7 +4,7 @@ routes = []
 
 routes.append(
     dict(
-        rule="/create/", view_func=create_recipe, options=dict(methods=["POST"])
+        rule="/create", view_func=create_recipe, options=dict(methods=["POST"])
     )
 )
 

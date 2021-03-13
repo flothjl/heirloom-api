@@ -7,6 +7,7 @@ from heirloom_api.db.auth import get_db
 from .login import routes as login_routes
 from .logout import routes as logout_routes
 from .register import routes as register_routes
+from .is_authed import routes as is_authed_routes
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -24,7 +25,7 @@ def load_logged_in_user():
             'SELECT * FROM user WHERE id = ?', (user_id,)
         ).fetchone()
 
-routes = login_routes + register_routes + logout_routes
+routes = login_routes + register_routes + logout_routes + is_authed_routes
 
 for r in routes:
     bp.add_url_rule(
